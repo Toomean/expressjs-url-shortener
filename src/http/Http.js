@@ -12,16 +12,16 @@ module.exports = function Http (app)
 	http.express.set('views', app.root('views'))
 	http.express.set('view engine', 'pug')
 
-	app.use(bodyParser.json())
-	app.use(bodyParser.urlencoded({ extended: false }))
-	app.use(sass(
+	http.express.use(bodyParser.json())
+	http.express.use(bodyParser.urlencoded({ extended: false }))
+	http.express.use(sass(
 	{
 	  src: app.root('public'),
 	  dest: app.root('public'),
 	  indentedSyntax: true,
 	  sourceMap: true
 	}))
-	app.use(express.static(app.root('public')))
+	http.express.use(express.static(app.root('public')))
 
 	http.api = {}
 

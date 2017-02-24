@@ -2,18 +2,23 @@
   "name": "expressjs-url-shortener",
   "version": "0.0.1",
   "description": "",
-  "repository": {
+  "main": "index.js",
+  "repository":
+  {
     "type": "git",
     "url": "git+https://github.com/Toomean/expressjs-url-shortener.git"
   },
   "author": "Tommy Toomean",
   "license": "MIT",
-  "bugs": {
+  "bugs":
+  {
     "url": "https://github.com/Toomean/expressjs-url-shortener/issues"
   },
   "homepage": "https://github.com/Toomean/expressjs-url-shortener#readme",
-  "scripts": {
-    "start": "node ./bin/www",
+  "scripts":
+  {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js --ext js,sass,pug",
     "lint": "./node_modules/.bin/eslint ./src"
   },
   "dependencies": {

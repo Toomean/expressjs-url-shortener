@@ -1,0 +1,26 @@
+{
+  "name": "expressjs-url-shortener",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toomean/expressjs-url-shortener.git"
+  },
+  "author": "Tommy Toomean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Toomean/expressjs-url-shortener/issues"
+  },
+  "homepage": "https://github.com/Toomean/expressjs-url-shortener#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.40.0",
+    "flow-typed": "^2.0.0"
+  }
+}

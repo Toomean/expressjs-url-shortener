@@ -1,0 +1,69 @@
+{
+  "name": "expressjs-url-shortener",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toomean/expressjs-url-shortener.git"
+  },
+  "author": "Tommy Toomean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Toomean/expressjs-url-shortener/issues"
+  },
+  "homepage": "https://github.com/Toomean/expressjs-url-shortener#readme",
+  "scripts": {
+    "start": "node ./bin/www",
+    "lint": "./node_modules/.bin/eslint ./src"
+  },
+  "dependencies": {
+    "rootpath":
+      "StreetStrider/rootpath#v1.7.0",
+
+    "body-parser":
+      "~1.16.0",
+
+    "console-ultimate":
+      "^2.8.2",
+
+    "cookie-parser":
+      "~1.4.3",
+
+    "debug":
+      "~2.6.0",
+
+    "express":
+      "~4.14.1",
+
+    "lodash":
+      "^4.17.4",
+
+    "morgan":
+      "~1.7.0",
+
+    "node-sass-middleware":
+      "0.9.8",
+
+    "pug":
+      "~2.0.0-beta10",
+
+    "serve-favicon":
+      "~2.3.2"
+  },
+  "devDependencies": {
+    "eslint":
+      "^3.16.1",
+
+    "flow-bin":
+      "^0.40.0",
+
+    "flow-typed":
+      "^2.0.0",
+
+    "js-outlander":
+      "StrangeTransistor/js-outlander#2.1.0",
+
+    "nodemon":
+      "^1.11.0"
+  }
+}

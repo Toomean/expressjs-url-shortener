@@ -3,7 +3,8 @@ require('console-ultimate/global').replace()
 
 const Rootpath = require('rootpath')
 
-const Http = require('./http/Http')
+const Config = require('./Config')
+const Http = require('./Http')
 
 module.exports = function App ()
 {
@@ -11,7 +12,9 @@ module.exports = function App ()
 
 	app.root = Rootpath(__dirname, '..')
 
-	app.http = Http(app)
+	app.cfg = Config(app.root.partial('cfg'))
+
+	app.http = Http(app.root, app.cfg.http)
 
 	app.start = function ()
 	{
@@ -22,7 +25,7 @@ module.exports = function App ()
 		})
 		.then(() =>
 		{
-			console.log('App listening on port 3000')
+			console.log(`App listening on port ${app.cfg.http.port} `)
 		})
 	}
 

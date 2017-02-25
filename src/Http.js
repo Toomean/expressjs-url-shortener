@@ -3,25 +3,25 @@ const express    = require('express')
 const bodyParser = require('body-parser')
 const sass       = require('node-sass-middleware')
 
-module.exports = function Http (app)
+module.exports = function Http (rootpath, cfg)
 {
-	var http = {}
+	let http = {}
 
 	http.express = express()
 
-	http.express.set('views', app.root('views'))
+	http.express.set('views', rootpath('views'))
 	http.express.set('view engine', 'pug')
 
 	http.express.use(bodyParser.json())
 	http.express.use(bodyParser.urlencoded({ extended: false }))
 	http.express.use(sass(
 	{
-	  src: app.root('public'),
-	  dest: app.root('public'),
+	  src: rootpath('public'),
+	  dest: rootpath('public'),
 	  indentedSyntax: true,
 	  sourceMap: true
 	}))
-	http.express.use(express.static(app.root('public')))
+	http.express.use(express.static(rootpath('public')))
 
 	http.api = {}
 
@@ -34,7 +34,7 @@ module.exports = function Http (app)
 	{
 		return new Promise(rs =>
 		{
-			return http.express.listen(3000, rs)
+			return http.express.listen(cfg.port, rs)
 		})
 	}
 

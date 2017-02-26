@@ -8,7 +8,7 @@ exports.up = function(knex, Promise)
 		{
 			table.increments('id').primary()
 			table.string('origin', 2000)
-			table.string('hash')
+			table.string('hash').unique()
 			table.timestamp('created_at').defaultTo(knex.fn.now())
 			table.timestamp('expired_at').notNullable()
 		})

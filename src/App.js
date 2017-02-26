@@ -17,7 +17,7 @@ module.exports = function App ()
 
 	app.db = Db(app.cfg)
 
-	app.http = Http(app.root, app.cfg.http)
+	app.http = Http(app.root, app.cfg.http, app.db)
 
 	app.start = function ()
 	{

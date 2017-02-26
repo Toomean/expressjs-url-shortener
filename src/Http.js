@@ -1,9 +1,9 @@
 
 const express    = require('express')
-const bodyParser = require('body-parser')
+const body_parser = require('body-parser')
 const sass       = require('node-sass-middleware')
 
-module.exports = function Http (rootpath, cfg)
+module.exports = function Http (rootpath, cfg, db)
 {
 	let http = {}
 
@@ -12,8 +12,7 @@ module.exports = function Http (rootpath, cfg)
 	http.express.set('views', rootpath('views'))
 	http.express.set('view engine', 'pug')
 
-	http.express.use(bodyParser.json())
-	http.express.use(bodyParser.urlencoded({ extended: false }))
+	http.express.use(body_parser.json({ limit: '256kb' }))
 	http.express.use(sass(
 	{
 	  src: rootpath('public'),
@@ -28,6 +27,15 @@ module.exports = function Http (rootpath, cfg)
 	http.express.get('/', (rq, rs) =>
 	{
 		rs.render('index', { title: 'Express' })
+	})
+
+	http.express.get('/:hash', (rq, rs) =>
+	{
+		return db.hash.get(rq.params.hash)
+		.then(so =>
+		{
+			rs.redirect(so.origin)
+		})
 	})
 
 	http.listen = () =>

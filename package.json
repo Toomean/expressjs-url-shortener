@@ -23,7 +23,8 @@
 
     "create_migration": "knex migrate:make",
     "migrate": "knex migrate:latest",
-    "rollback": "knex migrate:rollback"
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run"
   },
   "dependencies": {
     "rootpath":
@@ -56,8 +57,14 @@
     "pg":
       "^6.1.2",
 
+    "knexed":
+      "^1.1.0",
+
     "morgan":
       "~1.7.0",
+
+    "moment":
+      "^2.17.1",
 
     "node-sass-middleware":
       "0.9.8",

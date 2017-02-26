@@ -19,7 +19,11 @@
   {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js --ext js,sass,pug",
-    "lint": "./node_modules/.bin/eslint ./src"
+    "lint": "./node_modules/.bin/eslint ./src",
+
+    "create_migration": "./node_modules/.bin/eslint migrate:make",
+    "migrate": "./node_modules/.bin/eslint migrate:latest",
+    "rollback": "./node_modules/.bin/eslint migrate:rollback"
   },
   "dependencies": {
     "rootpath":
@@ -45,6 +49,12 @@
 
     "lodash":
       "^4.17.4",
+
+    "knex":
+      "^0.12.6",
+
+    "pg":
+      "^6.1.2",
 
     "morgan":
       "~1.7.0",
